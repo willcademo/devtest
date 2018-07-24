@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+
+<!-- TestCase Results Document created by LISA Test Editor -->
+<!-- On: Mon Jul 23 16:52:11 PDT 2018 -->
+
+
+<Results name="MakeMar">
+
+
+    <Result node="Make MAR">
+      <content type="com.itko.lisa.http.html.HtmlResponseWrapper" charset="UTF-8"><![CDATA[TG9jYWxlOiBlbl9VUwpTZXR0aW5nIFN5c3RlbS5vdXQgYW5kIFN5c3RlbS5lcnIgdG86IFVURi04CkxJU0FfSE9NRSBzZXQgdG8gL0FwcGxpY2F0aW9ucy9DQS9EZXZUZXN0LzEwLjEvCkRldlRlc3QgdGVtcG9yYXJ5IGRpcmVjdG9yeSBpcyAvVXNlcnMvd3RydW9uZy9saXNhdG1wXzEwLjEuMApDb25maWd1cmluZyBsb2dnaW5nIGZyb20gJy9BcHBsaWNhdGlvbnMvQ0EvRGV2VGVzdC8xMC4xL2xvZ2dpbmcucHJvcGVydGllcycKRGV2VGVzdCBTb2x1dGlvbnMsIENvcHlyaWdodCAoYykgMjAwMi0yMDE4IENBLCBBbGwgcmlnaHRzIHJlc2VydmVkLgpNYXJNYWtlcgpEZXZUZXN0IFNvbHV0aW9ucyBWZXJzaW9uIDo6IDEwLjEuMCAoMTAuMS4wLjI4MykKSW5zdGFsbGVkIHBhdGNoZXM6IG5vbmU=]]></content>
+    </Result>
+
+
+</Results>

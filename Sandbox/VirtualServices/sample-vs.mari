@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<MarInfo>
+<name>sample-vs</name>
+<type>VIRTUAL_SERVICE</type>
+<projectRoot>Sandbox</projectRoot>
+<optimized>true</optimized>
+<deployInfo>
+    <PrimaryAsset>VirtualServices/sample-vs.vsm</PrimaryAsset>
+    <Configuration>Configs/project.config</Configuration>
+    <ConcurrentCapacity>1</ConcurrentCapacity>
+    <ThinkTimePercent>100</ThinkTimePercent>
+    <AutoRestart>true</AutoRestart>
+    <StartOnDeploy>true</StartOnDeploy>
+</deployInfo>
+</MarInfo>
