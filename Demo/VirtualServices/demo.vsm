@@ -102,24 +102,6 @@ if (body != null) {
 </CustomFilterData>
       </Filter>
 
-      <Filter type="com.itko.lisa.vse.stateful.common.DataProtocolFilter">
-        <valueToFilterKey>lisa.vse.request</valueToFilterKey>
-<dataProtocol>com.itko.lisa.vse.ext.xml.ElementXmlDataProtocolHandler</dataProtocol>
-<processRequests>true</processRequests>
-<processResponses>false</processResponses>
-<CustomFilterData>
-</CustomFilterData>
-      </Filter>
-
-      <Filter type="com.itko.lisa.vse.stateful.common.DataProtocolFilter">
-        <valueToFilterKey>lisa.vse.request</valueToFilterKey>
-<dataProtocol>com.itko.lisa.vse.ext.xml.AttributeXmlDataProtocolHandler</dataProtocol>
-<processRequests>true</processRequests>
-<processResponses>false</processResponses>
-<CustomFilterData>
-</CustomFilterData>
-      </Filter>
-
 <outputAsObject>true</outputAsObject>
 <onExceptionStep>abort</onExceptionStep>
 <listenPort>8002</listenPort>
@@ -154,7 +136,7 @@ if (body != null) {
         <executionMode>EFFICIENT</executionMode>
 </CheckResult>
 
-<vsiSource>{{LISA_PROJ_ROOT}}/VirtualServices/Images/STB_CatalogServer_REST_XML.vsi</vsiSource>
+<vsiSource>{{LISA_PROJ_ROOT}}/VirtualServices/Images/demo.vsi</vsiSource>
 <requestPropertyName>lisa.vse.request</requestPropertyName>
 <outputAsObject>true</outputAsObject>
 <onExceptionStep>abort</onExceptionStep>

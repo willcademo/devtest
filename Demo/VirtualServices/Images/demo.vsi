@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+
+<serviceImage id="1" name="sample-vs" created="2018-07-25.14:31:38.982" lastModified="2018-07-25.14:31:38.982" version="10.3.0" buildNumber="10.3.0.297">
+<ucrr>
+<rp id="3" t="0">
+</rp>
+</ucrr>
+<usrr>
+<rp id="2" t="0">
+</rp>
+</usrr>
+</serviceImage>
