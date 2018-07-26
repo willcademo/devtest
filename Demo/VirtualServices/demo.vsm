@@ -104,7 +104,7 @@ if (body != null) {
 
 <outputAsObject>true</outputAsObject>
 <onExceptionStep>abort</onExceptionStep>
-<listenPort>8002</listenPort>
+<listenPort>8003</listenPort>
 <basePath>/catalog/stbr</basePath>
 <bindOnly>false</bindOnly>
 <useSSL>false</useSSL>
