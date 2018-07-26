@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<VSModel name="sample-vs" version="5">
+<?xml version="1.0" ?>
+
+<VSModel name="demo" version="5">
 
 <meta>
-   <create author="wt07201" buildNumber="6.0.10.10" date="08/16/2012" host="ad1hfdcto702" version="6.0.10"/>
-   <lastEdited author="wtruong" buildNumber="7.5.2.235" date="01/08/2015" host="Williams-MacBook-Pro.local" version="7.5.2"/>
+   <create version="6.0.10" buildNumber="6.0.10.10" author="wt07201" date="08/16/2012" host="ad1hfdcto702" />
+   <lastEdited version="10.3.0" buildNumber="10.3.0.297" author="admin" date="07/25/2018" host="truwi01mac1448" />
 </meta>
 
 <id>33363764346537642D396531322D3435</id>
 <IsInProject>true</IsInProject>
-<sig>ZWQ9MyZ0Y3Y9NSZsaXNhdj03LjUuMiAoNy41LjIuMjM1KSZub2Rlcz0tOTUwMzc5ODY5</sig>
+<sig>ZWQ9NSZ0Y3Y9NSZsaXNhdj0xMC4zLjAgKDEwLjMuMC4yOTcpJm5vZGVzPS05NTAzNzk4Njk=</sig>
 <subprocess>false</subprocess>
 
 <initState>
@@ -20,7 +21,14 @@
 <deletedProps>
 </deletedProps>
 
-    <Node log="" name="Virtual HTTPS Listener 8002" next="VS Image Response Selection" quiet="true" think="0" type="com.itko.lisa.vse.stateful.protocol.http.HttpListenStep" uid="null" useFilters="true" version="1"> 
+    <Node name="Virtual HTTPS Listener 8002" log=""
+          type="com.itko.lisa.vse.stateful.protocol.http.HttpListenStep" 
+          version="1" 
+          uid="null" 
+          think="0" 
+          useFilters="true" 
+          quiet="true" 
+          next="VS Image Response Selection" > 
 
 
       <!-- Filters -->
@@ -46,25 +54,25 @@
 <processResponses>false</processResponses>
 <CustomFilterData>
 <source set="request_body"/><actions>
-<action name="req_pack_cmd_cat_text_" set="argument">
+<action set="argument" name="req_pack_cmd_cat_text_">
 <query>/req_pack/cmd_cat/text()</query>
 <map>
-<entry name=""/>
+<entry name=""></entry>
 </map>
 </action>
-<action name="req_pack_cmd_text_" set="argument">
+<action set="argument" name="req_pack_cmd_text_">
 <query>/req_pack/cmd/text()</query>
 <map>
-<entry name=""/>
+<entry name=""></entry>
 </map>
 </action>
-<action name="req_pack_features_text_" set="argument">
+<action set="argument" name="req_pack_features_text_">
 <query>/req_pack/features/text()</query>
 <map>
-<entry name=""/>
+<entry name=""></entry>
 </map>
 </action>
-<action name="original_req_body" set="attribute">
+<action set="attribute" name="original_req_body">
 <query>/*</query>
 <map>
 </map>
@@ -72,7 +80,7 @@
 <action set="request_body">
 <query>/req_pack/vod_search_req</query>
 <map>
-<entry name=""/>
+<entry name=""></entry>
 </map>
 </action>
 </actions>
@@ -105,34 +113,43 @@ if (body != null) {
 <outputAsObject>true</outputAsObject>
 <onExceptionStep>abort</onExceptionStep>
 <listenPort>8003</listenPort>
-<basePath>/catalog/stbr</basePath>
+<bindAddress></bindAddress>
+<basePath>/demo</basePath>
 <bindOnly>false</bindOnly>
 <useSSL>false</useSSL>
+<sslClientAuthType>none</sslClientAuthType>
     </Node>
 
 
-    <Node log="" name="VS Image Response Selection" next="Virtual Service Execution Router" quiet="true" think="0" type="com.itko.lisa.vse.stateful.ConversationalStep" uid="33363764346537642D396531322D3435-VS+Image+Response+Selection" useFilters="true" version="1"> 
+    <Node name="VS Image Response Selection" log=""
+          type="com.itko.lisa.vse.stateful.ConversationalStep" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-VS+Image+Response+Selection" 
+          think="0" 
+          useFilters="true" 
+          quiet="true" 
+          next="Virtual Service Execution Router" > 
 
 
       <!-- Assertions -->
 <CheckResult assertTrue="true" name="If validating" type="com.itko.lisa.vse.stateful.AssertOnExecutionMode">
 <log>Current execution mode is Image Validation, branching to HTTP/S Live Invocation</log>
 <then>HTTP/S Live Invocation</then>
-<valueToAssertKey/>
+<valueToAssertKey></valueToAssertKey>
         <executionMode>VALIDATION</executionMode>
 </CheckResult>
 
 <CheckResult assertTrue="true" name="If tracking" type="com.itko.lisa.vse.stateful.AssertOnExecutionMode">
 <log>Current execution mode is Transaction Tracking, branching to Virtual Service Tracking</log>
 <then>Virtual Service Tracking</then>
-<valueToAssertKey/>
+<valueToAssertKey></valueToAssertKey>
         <executionMode>TRACK</executionMode>
 </CheckResult>
 
 <CheckResult assertTrue="true" name="If efficient" type="com.itko.lisa.vse.stateful.AssertOnExecutionMode">
 <log>Current execution mode is Most Efficient, branching to HTTP/S Respond directly</log>
 <then>HTTP/S Respond</then>
-<valueToAssertKey/>
+<valueToAssertKey></valueToAssertKey>
         <executionMode>EFFICIENT</executionMode>
 </CheckResult>
 
@@ -143,45 +160,43 @@ if (body != null) {
     </Node>
 
 
-    <Node log="" name="Virtual Service Execution Router" next="HTTP/S Respond" quiet="true" think="0" type="com.itko.lisa.vse.stateful.VSRouterStep" uid="33363764346537642D396531322D3435-Virtual+Service+Router" useFilters="true" version="1"> 
+    <Node name="Virtual Service Execution Router" log=""
+          type="com.itko.lisa.vse.stateful.VSRouterStep" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-Virtual+Service+Router" 
+          think="0" 
+          useFilters="true" 
+          quiet="true" 
+          next="HTTP/S Respond" > 
 
 <onerror>abort</onerror>
-<script>// This script must return either an enum entry from ExecutionMode or
-// a string that is the name of an enum entry.  The DYNAMIC entry may
-// not be returned.  It will be executed for DYNAMIC execution mode
-// only.
-import com.itko.lisa.vse.ExecutionMode;
-import java.util.ArrayList;
-import com.itko.lisa.vse.stateful.model.TransientResponse;
-import com.itko.util.ParameterList;
-import com.itko.util.Parameter;
-
-responseList = testExec.getStateObject("lisa.vse.response");
-// Loop through responses and check for 404 response codes
-for (int i = 0; i &lt; responseList.size(); i++) {
-    TransientResponse response = responseList.get(i);
-    if (response != null) {
-        ParameterList metaData = response.getMetaData();
-        Parameter responseCode = metaData.getParameter("HTTP-Response-Code");
-        if (responseCode != null &amp;&amp; "404".equals(responseCode.getValue())) {
-            return ExecutionMode.LIVE;
-        }
-    }
-}
-return ExecutionMode.EFFICIENT;
-</script>
+<script>// This script must return either an enum entry from ExecutionMode or&#10;// a string that is the name of an enum entry.  The DYNAMIC entry may&#10;// not be returned.  It will be executed for DYNAMIC execution mode&#10;// only.&#10;import com.itko.lisa.vse.ExecutionMode;&#10;import java.util.ArrayList;&#10;import com.itko.lisa.vse.stateful.model.TransientResponse;&#10;import com.itko.util.ParameterList;&#10;import com.itko.util.Parameter;&#10;&#10;responseList = testExec.getStateObject(&quot;lisa.vse.response&quot;);&#10;// Loop through responses and check for 404 response codes&#10;for (int i = 0; i &lt; responseList.size(); i++) {&#10;    TransientResponse response = responseList.get(i);&#10;    if (response != null) {&#10;        ParameterList metaData = response.getMetaData();&#10;        Parameter responseCode = metaData.getParameter(&quot;HTTP-Response-Code&quot;);&#10;        if (responseCode != null &amp;&amp; &quot;404&quot;.equals(responseCode.getValue())) {&#10;            return ExecutionMode.LIVE;&#10;        }&#10;    }&#10;}&#10;return ExecutionMode.EFFICIENT;&#10;</script>
 <liveInvocationStep>HTTP/S Live Invocation</liveInvocationStep>
     </Node>
 
 
-    <Node log="" name="HTTP/S Respond" next="Virtual HTTPS Listener 8002" quiet="false" think="0" type="com.itko.lisa.vse.stateful.protocol.http.HttpRespondStep" uid="33363764346537642D396531322D3435-HTTP%2FS+Respond" useFilters="true" version="1"> 
+    <Node name="HTTP/S Respond" log=""
+          type="com.itko.lisa.vse.stateful.protocol.http.HttpRespondStep" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-HTTP%2FS+Respond" 
+          think="0" 
+          useFilters="true" 
+          quiet="false" 
+          next="Virtual HTTPS Listener 8002" > 
 
 <responseList>lisa.vse.response</responseList>
 <onExceptionStep>abort</onExceptionStep>
     </Node>
 
 
-    <Node log="" name="Virtual Service Tracking" next="HTTP/S Respond" quiet="true" think="0" type="com.itko.lisa.vse.stateful.VSTrackingStep" uid="33363764346537642D396531322D3435-Virtual+Service+Tracking" useFilters="true" version="1"> 
+    <Node name="Virtual Service Tracking" log=""
+          type="com.itko.lisa.vse.stateful.VSTrackingStep" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-Virtual+Service+Tracking" 
+          think="0" 
+          useFilters="true" 
+          quiet="true" 
+          next="HTTP/S Respond" > 
 
 <imageResponseProperty>lisa.vse.image.response</imageResponseProperty>
 <liveResponseProperty>lisa.vse.live.response</liveResponseProperty>
@@ -189,14 +204,21 @@ return ExecutionMode.EFFICIENT;
     </Node>
 
 
-    <Node log="" name="HTTP/S Live Invocation" next="Log Live Traffic" quiet="true" think="0" type="com.itko.lisa.vse.stateful.protocol.http.HttpLiveInvocationStep" uid="33363764346537642D396531322D3435-HTTP%2FS+Live+Invocation" useFilters="true" version="1"> 
+    <Node name="HTTP/S Live Invocation" log=""
+          type="com.itko.lisa.vse.stateful.protocol.http.HttpLiveInvocationStep" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-HTTP%2FS+Live+Invocation" 
+          think="0" 
+          useFilters="true" 
+          quiet="true" 
+          next="Log Live Traffic" > 
 
 
       <!-- Assertions -->
 <CheckResult assertTrue="true" name="If validating" type="com.itko.lisa.vse.stateful.AssertOnExecutionMode">
 <log>Current execution mode is Image Validation, branching to Virtual Service Tracking</log>
 <then>Virtual Service Tracking</then>
-<valueToAssertKey/>
+<valueToAssertKey></valueToAssertKey>
         <executionMode>VALIDATION</executionMode>
 </CheckResult>
 
@@ -211,94 +233,61 @@ return ExecutionMode.EFFICIENT;
     </Node>
 
 
-    <Node log="" name="Log Live Traffic" next="HTTP/S Respond" quiet="false" think="500-1S" type="com.itko.lisa.test.ScriptNode" uid="33363764346537642D396531322D3435-Log+Live+Traffic" useFilters="true" version="1"> 
+    <Node name="Log Live Traffic" log=""
+          type="com.itko.lisa.test.ScriptNode" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-Log+Live+Traffic" 
+          think="500-1S" 
+          useFilters="true" 
+          quiet="false" 
+          next="HTTP/S Respond" > 
 
 
       <!-- Assertions -->
 <CheckResult assertTrue="true" name="Any Exception Then Fail" type="com.itko.lisa.dynexec.CheckInvocationEx">
 <log>Assert [Any Exception Then Fail] fired true of type Assert on Invocation Exception</log>
 <then>fail</then>
-<valueToAssertKey/>
+<valueToAssertKey></valueToAssertKey>
         <param>.*</param>
 </CheckResult>
 
 <onerror>abort</onerror>
-<script>import java.io.*;
-import java.util.Date;
-import com.itko.lisa.vse.stateful.model.TransientResponse;
-
-if ("true".equals(testExec.getStateObject("LOG_LIVE_TRAFFIC"))) {
-    // Get request operation and body
-    request = testExec.getStateObject("lisa.vse.request");
-    String operation = request.getOperation();
-    //String requestText = request.getBodyText();
-    String requestText = testExec.getStateValue("original_req_body");
-
-    // Get response body
-    responseList = testExec.getStateObject("lisa.vse.response");
-    String responseText = "";
-    for (int i = 0; i &lt; responseList.size(); i++) {
-        TransientResponse response = responseList.get(i);
-        responseText = responseText + response.getBodyText() + "\r\n";
-    }
-
-    // Set log directory and filename
-    String directory = testExec.getStateValue("VSE_LOG_DIR");
-    String fileName = "catalogserver_payload" + "_" + new Date().getTime();
-    Writer writer = null;
-    FileWriter fw = null;
-
-    // Logging request and response to file
-    if (operation != null &amp;&amp; directory != null &amp;&amp; fileName != null) {
-        File dir = new File(directory);
-        if (! dir.isDirectory()) {
-           dir.mkdirs();
-        }
-		// Write request file
-        File file = new File(directory + "/" + fileName + "-req.txt");
-        file.createNewFile();
-        fw = new FileWriter(file, true);
-        writer = new BufferedWriter(fw);
-        if (operation != null) {
-            writer.write(operation);
-            writer.write("\r\n\r\n");
-        }
-        if (requestText != null) {
-            writer.write(requestText);
-        }
-		writer.close();
-		fw.close();
-		
-		// Write response file
-		file = new File(directory + "/" + fileName + "-rsp.txt");
-        file.createNewFile();
-        fw = new FileWriter(file, true);
-        writer = new BufferedWriter(fw);
-        if (responseText != null) {
-            writer.write(responseText);
-        }
-		writer.close();
-		fw.close();
-        
-        return "Request/Response written to: " + directory + "\nFilename: " + fileName;
-    }
-} else {
-    return "Pass through logging is disabled.";
-}</script>
+<script>import java.io.*;&#10;import java.util.Date;&#10;import com.itko.lisa.vse.stateful.model.TransientResponse;&#10;&#10;if (&quot;true&quot;.equals(testExec.getStateObject(&quot;LOG_LIVE_TRAFFIC&quot;))) {&#10;    // Get request operation and body&#10;    request = testExec.getStateObject(&quot;lisa.vse.request&quot;);&#10;    String operation = request.getOperation();&#10;    //String requestText = request.getBodyText();&#10;    String requestText = testExec.getStateValue(&quot;original_req_body&quot;);&#10;&#10;    // Get response body&#10;    responseList = testExec.getStateObject(&quot;lisa.vse.response&quot;);&#10;    String responseText = &quot;&quot;;&#10;    for (int i = 0; i &lt; responseList.size(); i++) {&#10;        TransientResponse response = responseList.get(i);&#10;        responseText = responseText + response.getBodyText() + &quot;\r\n&quot;;&#10;    }&#10;&#10;    // Set log directory and filename&#10;    String directory = testExec.getStateValue(&quot;VSE_LOG_DIR&quot;);&#10;    String fileName = &quot;catalogserver_payload&quot; + &quot;_&quot; + new Date().getTime();&#10;    Writer writer = null;&#10;    FileWriter fw = null;&#10;&#10;    // Logging request and response to file&#10;    if (operation != null &amp;&amp; directory != null &amp;&amp; fileName != null) {&#10;        File dir = new File(directory);&#10;        if (! dir.isDirectory()) {&#10;           dir.mkdirs();&#10;        }&#10;&#9;&#9;// Write request file&#10;        File file = new File(directory + &quot;/&quot; + fileName + &quot;-req.txt&quot;);&#10;        file.createNewFile();&#10;        fw = new FileWriter(file, true);&#10;        writer = new BufferedWriter(fw);&#10;        if (operation != null) {&#10;            writer.write(operation);&#10;            writer.write(&quot;\r\n\r\n&quot;);&#10;        }&#10;        if (requestText != null) {&#10;            writer.write(requestText);&#10;        }&#10;&#9;&#9;writer.close();&#10;&#9;&#9;fw.close();&#10;&#9;&#9;&#10;&#9;&#9;// Write response file&#10;&#9;&#9;file = new File(directory + &quot;/&quot; + fileName + &quot;-rsp.txt&quot;);&#10;        file.createNewFile();&#10;        fw = new FileWriter(file, true);&#10;        writer = new BufferedWriter(fw);&#10;        if (responseText != null) {&#10;            writer.write(responseText);&#10;        }&#10;&#9;&#9;writer.close();&#10;&#9;&#9;fw.close();&#10;        &#10;        return &quot;Request/Response written to: &quot; + directory + &quot;\nFilename: &quot; + fileName;&#10;    }&#10;} else {&#10;    return &quot;Pass through logging is disabled.&quot;;&#10;}</script>
     </Node>
 
 
-    <Node log="" name="end" next="fail" quiet="true" think="0h" type="com.itko.lisa.test.NormalEnd" uid="33363764346537642D396531322D3435-end" useFilters="true" version="1"> 
+    <Node name="end" log=""
+          type="com.itko.lisa.test.NormalEnd" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-end" 
+          think="0h" 
+          useFilters="true" 
+          quiet="true" 
+          next="fail" > 
 
     </Node>
 
 
-    <Node log="" name="fail" next="fail" quiet="true" think="0h" type="com.itko.lisa.test.Abend" uid="33363764346537642D396531322D3435-fail" useFilters="true" version="1"> 
+    <Node name="fail" log=""
+          type="com.itko.lisa.test.Abend" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-fail" 
+          think="0h" 
+          useFilters="true" 
+          quiet="true" 
+          next="fail" > 
 
     </Node>
 
 
-    <Node log="The test was aborted" name="abort" next="fail" quiet="true" think="0h" type="com.itko.lisa.test.AbortStep" uid="33363764346537642D396531322D3435-abort" useFilters="true" version="1"> 
+    <Node name="abort" log="The test was aborted"
+          type="com.itko.lisa.test.AbortStep" 
+          version="1" 
+          uid="33363764346537642D396531322D3435-abort" 
+          think="0h" 
+          useFilters="true" 
+          quiet="true" 
+          next="fail" > 
 
     </Node>
 
