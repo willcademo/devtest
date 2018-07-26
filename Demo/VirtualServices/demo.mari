@@ -3,7 +3,7 @@
 <MarInfo>
 <name>demo</name>
 <type>VIRTUAL_SERVICE</type>
-<projectRoot>Demos</projectRoot>
+<projectRoot>Demo</projectRoot>
 <optimized>true</optimized>
 <deployInfo>
     <PrimaryAsset>VirtualServices/demo.vsm</PrimaryAsset>
